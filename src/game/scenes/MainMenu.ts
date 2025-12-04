@@ -10,16 +10,16 @@ export class MainMenu extends Scene {
     }
 
     create() {
-        this.background = this.add.image(512, 384, 'background');
+        this.background = this.add.image(1024, 512, 'background');
 
 
-        this.title = this.add.text(512, 300, 'Sélim The Game', {
-            fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
+        this.title = this.add.text(1024, 300, 'Sélim The Game', {
+            fontFamily: 'Pixeled', fontSize: 80, color: '#ffffff',
             stroke: '#000000', strokeThickness: 8,
             align: 'center'
         }).setOrigin(0.5);
 
-        const playButton = this.add.image(512, 460, 'play_button')
+        const playButton = this.add.image(1024, 460, 'play_button')
             .setInteractive({ useHandCursor: true });
 
         playButton.on('pointerover', () => {
