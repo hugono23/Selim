@@ -1,23 +1,151 @@
 {
-    "intro": [
+    "scene0_intro": [
         {
             "id": 1,
-            "speaker": "Mad Wizard",
-            "text": "Bienvenue, voyageur du numérique ! ",
+            "speaker": "Wiwi",
+            "text": "Salut ! Je suis Wiwi. Bienvenue dans Protocol N.I.R.D.",
             "portrait": "madwizard1",
             "next": 2
         },
         {
             "id": 2,
-            "speaker": "Mad Wizard",
-            "text": "Je suis le gardien de cet endroit, un pont entre le monde des octets et celui de la nature.",
-            "portrait": "madwizard2",
+            "speaker": "Wiwi",
+            "text": "Ta mission est simple : sauver le monde numérique de l'obsolescence programmée.",
+            "portrait": "madwizard1",
             "next": 3
         },
         {
             "id": 3,
-            "speaker": "Mad Wizard",
-            "text": "Tu sens cette énergie ? C'est l'harmonie",
+            "speaker": "Wiwi",
+            "text": "Prêt ? C'est parti !",
+            "portrait": "madwizard1",
+            "next": null
+        }
+    ],
+    "scene1_intro": [
+        {
+            "id": 1,
+            "speaker": "Wizart",
+            "text": "Regarde ce dépotoir ! Ces machines sont vieilles, lentes et inutiles.",
+            "portrait": "wizart1",
+            "next": 2
+        },
+        {
+            "id": 2,
+            "speaker": "Wizart",
+            "text": "Laisse-les mourir. Achète mes nouvelles tablettes dorées à 1000 pièces d'or ! Le support s'arrête bientôt... Tic tac.",
+            "portrait": "wizart1",
+            "next": null
+        }
+    ],
+    "scene1_prof": [
+        {
+            "id": 1,
+            "speaker": "Professeur Sceptique",
+            "text": "On a pas le budget pour du neuf... Et ces vieux PC rament tellement...",
+            "portrait": "prof",
+            "next": null
+        }
+    ],
+    "scene1_wiwi_success": [
+        {
+            "id": 1,
+            "speaker": "Wiwi",
+            "text": "Tu vois ? L'âme de la machine est intacte. C'est le logiciel qui l'étouffait.",
+            "portrait": "madwizard1",
+            "next": 2
+        },
+        {
+            "id": 2,
+            "speaker": "Wiwi",
+            "text": "Nous avons mobilisé le premier soldat !",
+            "portrait": "madwizard1",
+            "next": 3
+        },
+        {
+            "id": 3,
+            "speaker": "Wizart",
+            "text": "Quoi ?! Impossible ! C'est de la nécromancie low-cost ! Je reviendrai !",
+            "portrait": "wizart1",
+            "next": null
+        }
+    ],
+    "scene2_intro": [
+        {
+            "id": 1,
+            "speaker": "Wizart",
+            "text": "C'est bien beau d'allumer, mais ça ne marchera jamais ! C'est trop compliqué !",
+            "portrait": "wizart1",
+            "next": 2
+        },
+        {
+            "id": 2,
+            "speaker": "Wizart",
+            "text": "Tes élèves vont tout casser ! Regarde, il manque des pièces !",
+            "portrait": "wizart1",
+            "next": null
+        }
+    ],
+    "scene2_geek_choice": [
+        {
+            "id": 1,
+            "speaker": "Élève Geek",
+            "text": "Je mets quel logiciel maître ?",
+            "portrait": "student",
+            "next": null
+        }
+    ],
+    "scene2_success": [
+        {
+            "id": 1,
+            "speaker": "Wiwi",
+            "text": "L'expérimentation est un succès. Les élèves ont le pouvoir. Ils ont compris qu'ils pouvaient réparer eux-mêmes.",
+            "portrait": "madwizard1",
+            "next": 2
+        },
+        {
+            "id": 2,
+            "speaker": "Wizart",
+            "text": "Non ! Mes profits ! Tu crées une armée d'indépendants ! Arrêtez-les !",
+            "portrait": "wizart1",
+            "next": null
+        }
+    ],
+    "scene3_intro": [
+        {
+            "id": 1,
+            "speaker": "Wizart",
+            "text": "Tu as gagné des batailles, mais pas la guerre. Je contrôle le Réseau.",
+            "portrait": "wizart1",
+            "next": 2
+        },
+        {
+            "id": 2,
+            "speaker": "Wizart",
+            "text": "Tu ne passeras pas le Conseil d'Administration. Tes petits PC Linux ne parleront jamais à mon Serveur Royal !",
+            "portrait": "wizart1",
+            "next": null
+        }
+    ],
+    "scene3_ending": [
+        {
+            "id": 1,
+            "speaker": "Wizart",
+            "text": "Error 404: Monopoly Not Found...",
+            "portrait": "wizart_glitch",
+            "next": 2
+        },
+        {
+            "id": 2,
+            "speaker": "Wiwi",
+            "text": "Tu as réussi. Ce n'est pas juste des ordis réparés. C'est un avenir durable que tu as installé.",
+            "portrait": "madwizard1",
+            "next": 3
+        },
+        {
+            "id": 3,
+            "speaker": "Wiwi",
+            "text": "Mise à jour terminée : Liberté 100%.",
             "portrait": "madwizard1",
             "next": null
         }

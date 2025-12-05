@@ -121,23 +121,35 @@ export class DialogUI extends Phaser.GameObjects.Container {
         this.fullText = node.text;
 
         if (node.portrait) {
-            // Assume portrait key format like "madwizard1", "madwizard2"
-            // We'll strip the number to get the base key if needed, or just use the provided key as base
-            // For this specific request, we know it toggles between 1 and 2.
-            // Let's assume the node.portrait is "madwizard1" or "madwizard"
-            this.portraitBaseKey = node.portrait.replace(/[0-9]/g, '');
-            // If the key was "madwizard1", base is "madwizard". 
-            // If the user provided "madwizard1" in json, we should probably handle that.
-            // Actually, the JSON has "madwizard1". Let's try to be smart.
-            if (node.portrait.endsWith('1') || node.portrait.endsWith('2')) {
-                this.portraitBaseKey = node.portrait.slice(0, -1);
-            } else {
-                this.portraitBaseKey = node.portrait;
+            let isAnimated = false;
+            let baseKey = node.portrait;
+
+            // Check if it looks like an animated frame (ends with number)
+            // or if we can find a '1' variant
+            if (node.portrait.match(/[0-9]$/)) {
+                baseKey = node.portrait.replace(/[0-9]$/, '');
             }
 
-            this.portrait.setTexture(this.portraitBaseKey + '1');
-            this.portrait.setVisible(true);
-            this.startPortraitAnimation();
+            // Check if baseKey + '1' and baseKey + '2' exist (implies animation)
+            if (this.scene.textures.exists(baseKey + '1') && this.scene.textures.exists(baseKey + '2')) {
+                isAnimated = true;
+                this.portraitBaseKey = baseKey;
+            }
+
+            if (isAnimated) {
+                this.portrait.setTexture(this.portraitBaseKey + '1');
+                this.portrait.setVisible(true);
+                this.startPortraitAnimation();
+            } else if (this.scene.textures.exists(node.portrait)) {
+                // Static portrait
+                this.portrait.setTexture(node.portrait);
+                this.portrait.setVisible(true);
+                this.stopPortraitAnimation();
+            } else {
+                console.warn(`Portrait texture not found: ${node.portrait}`);
+                this.portrait.setVisible(false);
+                this.stopPortraitAnimation();
+            }
         } else {
             this.portrait.setVisible(false);
             this.stopPortraitAnimation();
@@ -178,7 +190,10 @@ export class DialogUI extends Phaser.GameObjects.Container {
         this.stopPortraitAnimation();
         // Ensure we end on frame 1 or a closed mouth frame if we had one, but frame 1 is fine
         if (this.portrait.visible) {
-            this.portrait.setTexture(this.portraitBaseKey + '1');
+            // Only reset to '1' if we are in animation mode (implied by checking if base+1 exists)
+            if (this.scene.textures.exists(this.portraitBaseKey + '1') && !this.scene.textures.exists(this.portraitBaseKey)) {
+                this.portrait.setTexture(this.portraitBaseKey + '1');
+            }
         }
     }
 

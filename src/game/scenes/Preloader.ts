@@ -34,9 +34,32 @@ export class Preloader extends Scene {
         // Load dialog data
         this.load.json('dialogs', 'data/dialogs.json');
 
-        // Load wizard portraits
+        // Load wizard portraits (Animated)
         this.load.image('madwizard1', 'wizard/madwizard1.png');
         this.load.image('madwizard2', 'wizard/madwizard2.png');
+
+        // Load wizard portraits (Placeholders)
+        this.load.image('wizart_cloud', 'https://placehold.co/200x200/550000/ffffff.png?text=Wizart+Cloud');
+        this.load.image('wizart_screen', 'https://placehold.co/200x200/550000/ffffff.png?text=Wizart+Screen');
+        this.load.image('wizart_firewall', 'https://placehold.co/200x200/550000/ffffff.png?text=Wizart+Firewall');
+        this.load.image('wizart_angry', 'https://placehold.co/200x200/ff0000/ffffff.png?text=Wizart+Angry');
+        this.load.image('wizart_glitch', 'https://placehold.co/200x200/000000/00ff00.png?text=Wizart+Glitch');
+
+        this.load.image('wizart1', 'wizart/badwizard.png');
+        this.load.image('wizart2', 'wizart/badwizard2.png');
+
+        this.load.image('prof', 'https://placehold.co/200x200/cccccc/000000.png?text=Prof');
+        this.load.image('student', 'https://placehold.co/200x200/0000ff/ffffff.png?text=Student');
+
+        // Load backgrounds
+        this.load.image('bg_cimetiere', 'bgcimetiere.png');
+        this.load.image('bg_atelier', 'https://placehold.co/2048x1024/eeeeee/000000.png?text=Atelier+Alchimiste');
+        this.load.image('bg_serveur', 'https://placehold.co/2048x1024/000033/ffffff.png?text=Tour+Controle');
+
+        // Load items
+        this.load.image('item_usb', 'https://placehold.co/64x64/00ff00/000000.png?text=USB');
+        this.load.image('item_ssd', 'https://placehold.co/64x64/0000ff/ffffff.png?text=SSD');
+        this.load.image('item_tchap', 'https://placehold.co/64x64/ff00ff/ffffff.png?text=Tchap');
     }
 
     create() {

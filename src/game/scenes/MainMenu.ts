@@ -15,7 +15,7 @@ export class MainMenu extends Scene {
         this.background.setDisplaySize(width, height);
 
 
-        this.title = this.add.text(1024, 300, 'Sélim The Game', {
+        this.title = this.add.text(1024, 300, "Protocol N.I.R.D : \n L'Héritage du Code", {
             fontFamily: 'Pixeled', fontSize: 80, color: '#ffffff',
             stroke: '#000000', strokeThickness: 8,
             align: 'center'
@@ -47,7 +47,7 @@ export class MainMenu extends Scene {
         });
 
         playButton.on('pointerdown', () => {
-            this.scene.start('Game');
+            this.scene.start('Scene0_Intro');
         });
     }
 }
