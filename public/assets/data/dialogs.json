@@ -3,21 +3,21 @@
         {
             "id": 1,
             "speaker": "Mad Wizard",
-            "text": "Greetings, traveler! You have stumbled upon a realm of great mystery.",
+            "text": "Bienvenue, voyageur du numérique ! ",
             "portrait": "madwizard1",
             "next": 2
         },
         {
             "id": 2,
             "speaker": "Mad Wizard",
-            "text": "I am the keeper of these lands. Or... what's left of them.",
+            "text": "Je suis le gardien de cet endroit, un pont entre le monde des octets et celui de la nature.",
             "portrait": "madwizard2",
             "next": 3
         },
         {
             "id": 3,
             "speaker": "Mad Wizard",
-            "text": "Listen closely, for your journey is about to begin!",
+            "text": "Tu sens cette énergie ? C'est l'harmonie",
             "portrait": "madwizard1",
             "next": null
         }
