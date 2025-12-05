@@ -22,7 +22,8 @@ export class MainMenu extends Scene {
         }).setOrigin(0.5);
 
         const playButton = this.add.image(1024, 560, 'play_button')
-            .setInteractive({ useHandCursor: true });
+            .setInteractive({ useHandCursor: true })
+            .setScale(0.5);
 
         // Floating animation
         this.tweens.add({
