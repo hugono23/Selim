@@ -48,16 +48,20 @@ export class Preloader extends Scene {
         this.load.image('wizart1', 'wizart/badwizard.png');
         this.load.image('wizart2', 'wizart/badwizard2.png');
 
-        this.load.image('prof', 'https://placehold.co/200x200/cccccc/000000.png?text=Prof');
-        this.load.image('student', 'https://placehold.co/200x200/0000ff/ffffff.png?text=Student');
+        this.load.image('prof1', 'clippy/clippy.png');
+        this.load.image('prof2', 'clippy/clippy2.png');
+        this.load.image('prof', 'clippy/clippy.png');
+
+        this.load.image('student1', 'student/student.png');
+        this.load.image('student2', 'student/student2.png');
 
         // Load backgrounds
         this.load.image('bg_cimetiere', 'bgcimetiere.png');
-        this.load.image('bg_atelier', 'https://placehold.co/2048x1024/eeeeee/000000.png?text=Atelier+Alchimiste');
-        this.load.image('bg_serveur', 'https://placehold.co/2048x1024/000033/ffffff.png?text=Tour+Controle');
+        this.load.image('bg_atelier', 'bgclasse.png');
+        this.load.image('bg_serveur', 'bgfirewall.png');
 
         // Load items
-        this.load.image('item_usb', 'https://placehold.co/64x64/00ff00/000000.png?text=USB');
+        this.load.image('item_usb', 'usb.png');
         this.load.image('item_ssd', 'https://placehold.co/64x64/0000ff/ffffff.png?text=SSD');
         this.load.image('item_tchap', 'https://placehold.co/64x64/ff00ff/ffffff.png?text=Tchap');
     }
