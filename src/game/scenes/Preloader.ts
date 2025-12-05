@@ -29,7 +29,7 @@ export class Preloader extends Scene {
         this.load.setPath('assets');
 
         this.load.image('logo', 'logo.png');
-        this.load.image('play_button', 'https://placehold.co/200x80.png?text=PLAY');
+        this.load.image('play_button', 'playbutton.png');
 
         // Load dialog data
         this.load.json('dialogs', 'data/dialogs.json');
