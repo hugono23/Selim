@@ -30,41 +30,57 @@ export class DialogUI extends Phaser.GameObjects.Container {
     }
 
     private createBackground() {
-        const width = this.scene.scale.width - 40;
-        const height = 200;
-        const x = this.scene.scale.width / 2;
-        const y = this.scene.scale.height - 110;
+        const { width, height } = this.scene.scale;
+        const boxHeight = height * 0.25; // 25% of screen height
+        const boxWidth = width * 0.9; // 90% of screen width
+        const x = width / 2;
+        const y = height - (boxHeight / 2) - 20; // 20px padding from bottom
 
-        this.background = this.scene.add.rectangle(x, y, width, height, 0x000000, 0.8);
+        this.background = this.scene.add.rectangle(x, y, boxWidth, boxHeight, 0x000000, 0.8);
         this.background.setStrokeStyle(2, 0xffffff);
         this.add(this.background);
     }
 
     private createPortrait() {
-        // Placeholder position, will be updated when texture is set
-        this.portrait = this.scene.add.image(200, this.scene.scale.height - 170, '');
-        this.portrait.setScale(0.5); // Adjust scale as needed
+        const { width, height } = this.scene.scale;
+        const boxHeight = height * 0.25;
+        const boxBottom = height - 20;
+
+        // Position portrait on the left side of the box
+        const x = (width * 0.05) + (boxHeight * 0.5); // Left margin + half width of portrait area
+        const y = boxBottom - (boxHeight * 0.5);
+
+        this.portrait = this.scene.add.image(x, y, '');
+        this.portrait.setScale(0.5);
         this.add(this.portrait);
     }
 
     private createTexts() {
-        const x = 300; // Right of portrait
-        const y = this.scene.scale.height - 190;
-        const width = this.scene.scale.width - 250;
+        const { width, height } = this.scene.scale;
+        const boxHeight = height * 0.25;
+        const boxWidth = width * 0.9;
+        const boxTop = height - 20 - boxHeight;
+        const boxLeft = (width - boxWidth) / 2;
 
-        this.speakerText = this.scene.add.text(x, y, '', {
+        // Text starts after the portrait area
+        const portraitAreaWidth = boxHeight; // Assume square area for portrait
+        const textX = boxLeft + portraitAreaWidth + 20;
+        const textY = boxTop + 20;
+        const textWidth = boxWidth - portraitAreaWidth - 40;
+
+        this.speakerText = this.scene.add.text(textX, textY, '', {
             fontFamily: 'Arial',
-            fontSize: '24px',
+            fontSize: `${Math.max(24, height * 0.03)}px`, // Responsive font size
             color: '#ffff00',
             fontStyle: 'bold'
         });
         this.add(this.speakerText);
 
-        this.dialogText = this.scene.add.text(x, y + 40, '', {
+        this.dialogText = this.scene.add.text(textX, textY + (height * 0.05), '', {
             fontFamily: 'Arial',
-            fontSize: '20px',
+            fontSize: `${Math.max(20, height * 0.025)}px`, // Responsive font size
             color: '#ffffff',
-            wordWrap: { width: width }
+            wordWrap: { width: textWidth }
         });
         this.add(this.dialogText);
     }
