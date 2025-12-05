@@ -16,7 +16,9 @@ export class Game extends Scene {
         this.camera = this.cameras.main;
         this.camera.setBackgroundColor(0x00ff00);
 
-        this.background = this.add.image(512, 384, 'background');
+        const { width, height } = this.scale;
+        this.background = this.add.image(width / 2, height / 2, 'background');
+        this.background.setDisplaySize(width, height);
         this.background.setAlpha(1);
 
         // Initialize Dialog System

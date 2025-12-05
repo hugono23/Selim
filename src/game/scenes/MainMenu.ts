@@ -10,7 +10,9 @@ export class MainMenu extends Scene {
     }
 
     create() {
-        this.background = this.add.image(1024, 512, 'background');
+        const { width, height } = this.scale;
+        this.background = this.add.image(width / 2, height / 2, 'background');
+        this.background.setDisplaySize(width, height);
 
 
         this.title = this.add.text(1024, 300, 'Sélim The Game', {
