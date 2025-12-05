@@ -1,0 +1,25 @@
+{
+    "intro": [
+        {
+            "id": 1,
+            "speaker": "Mad Wizard",
+            "text": "Greetings, traveler! You have stumbled upon a realm of great mystery.",
+            "portrait": "madwizard1",
+            "next": 2
+        },
+        {
+            "id": 2,
+            "speaker": "Mad Wizard",
+            "text": "I am the keeper of these lands. Or... what's left of them.",
+            "portrait": "madwizard2",
+            "next": 3
+        },
+        {
+            "id": 3,
+            "speaker": "Mad Wizard",
+            "text": "Listen closely, for your journey is about to begin!",
+            "portrait": "madwizard1",
+            "next": null
+        }
+    ]
+}

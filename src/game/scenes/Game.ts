@@ -1,9 +1,12 @@
 import { Scene } from 'phaser';
+import { DialogManager } from '../systems/DialogManager';
+import { DialogUI } from '../ui/DialogUI';
 
 export class Game extends Scene {
     camera: Phaser.Cameras.Scene2D.Camera;
     background: Phaser.GameObjects.Image;
-    msg_text: Phaser.GameObjects.Text;
+    dialogManager: DialogManager;
+    dialogUI: DialogUI;
 
     constructor() {
         super('Game');
@@ -13,20 +16,48 @@ export class Game extends Scene {
         this.camera = this.cameras.main;
         this.camera.setBackgroundColor(0x00ff00);
 
-        this.background = this.add.image(542, 512, 'background');
-        this.background.setAlpha(0.5);
+        this.background = this.add.image(512, 384, 'background');
+        this.background.setAlpha(1);
 
-        this.msg_text = this.add.text(512, 384, 'Make something fun!\nand share it with us:\nsupport@phaser.io', {
-            fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
-            stroke: '#000000', strokeThickness: 8,
-            align: 'center'
+        // Initialize Dialog System
+        this.dialogManager = new DialogManager(this);
+        this.dialogManager.loadDialogs('dialogs');
+
+        this.dialogUI = new DialogUI(this);
+
+        // Event listeners
+        this.dialogManager.on('dialog-start', () => {
+            console.log('Dialog started');
         });
-        this.msg_text.setOrigin(0.5);
 
-        this.input.once('pointerdown', () => {
+        this.dialogManager.on('dialog-update', (node: any) => {
+            this.dialogUI.showDialog(node);
+        });
 
-            this.scene.start('GameOver');
+        this.dialogManager.on('dialog-end', () => {
+            this.dialogUI.hideDialog();
+            console.log('Dialog ended');
+            // Optional: Transition to next state or enable gameplay
+        });
 
+        // Start the intro dialog
+        this.dialogManager.startDialog('intro');
+
+        // Input handling to advance dialog
+        this.input.on('pointerdown', () => {
+            if (this.dialogUI.isTyping) {
+                this.dialogUI.completeTyping();
+            } else {
+                this.dialogManager.nextDialog();
+            }
+        });
+
+        this.input.keyboard?.on('keydown-SPACE', () => {
+            if (this.dialogUI.isTyping) {
+                this.dialogUI.completeTyping();
+            } else {
+                this.dialogManager.nextDialog();
+            }
         });
     }
 }

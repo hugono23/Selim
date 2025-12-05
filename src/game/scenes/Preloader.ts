@@ -30,6 +30,13 @@ export class Preloader extends Scene {
 
         this.load.image('logo', 'logo.png');
         this.load.image('play_button', 'https://placehold.co/200x80.png?text=PLAY');
+
+        // Load dialog data
+        this.load.json('dialogs', 'data/dialogs.json');
+
+        // Load wizard portraits
+        this.load.image('madwizard1', 'wizard/madwizard1.png');
+        this.load.image('madwizard2', 'wizard/madwizard2.png');
     }
 
     create() {
