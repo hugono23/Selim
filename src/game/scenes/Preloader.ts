@@ -62,8 +62,11 @@ export class Preloader extends Scene {
 
         // Load items
         this.load.image('item_usb', 'usb.png');
-        this.load.image('item_ssd', 'https://placehold.co/64x64/0000ff/ffffff.png?text=SSD');
+        this.load.image('item_ssd', 'ssd.png');
         this.load.image('item_tchap', 'https://placehold.co/64x64/ff00ff/ffffff.png?text=Tchap');
+
+        // Projectile for Scene 3 Boss
+        this.load.image('projectile', 'https://placehold.co/32x32/ff0000/ffffff.png?text=X');
     }
 
     create() {

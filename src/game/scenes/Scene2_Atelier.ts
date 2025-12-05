@@ -19,6 +19,9 @@ export class Scene2_Atelier extends Scene {
     create() {
         const { width, height } = this.scale;
 
+        // Reset state
+        this.pcsRepaired = 0;
+
         // Background
         this.add.image(width / 2, height / 2, 'bg_atelier').setDisplaySize(width, height);
 
